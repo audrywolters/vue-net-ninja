@@ -17,6 +17,11 @@ const app = Vue.createApp({
         toggleIsFav(book) {
             book.isFav = !book.isFav
         }
+    },
+    computed: {
+        filteredBookList() {
+            return this.bookList.filter((b) => b.isFav)
+        }
     }
 })
 
